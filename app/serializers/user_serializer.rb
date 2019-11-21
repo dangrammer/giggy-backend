@@ -3,7 +3,6 @@ class UserSerializer
 
   attributes(
     :username, 
-    :password_digest, 
     :first_name, 
     :last_name, 
     :full_name, #instance method from User class
