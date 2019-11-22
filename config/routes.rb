@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :categories
-  resources :applications
-  resources :listings
-  resources :users
-  post '/login', to: 'login#create'
+  namespace :api do
+    namespace :v1 do
+      resources :categories, only: :index
+      resources :applications, only: :index
+      resources :listings, only: :index
+      resources :users, only: [:index, :create]
+      post '/login', to: 'login#create'
+      get '/profile', to: 'users#profile'
+    end
+  end  
 end
-
-# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

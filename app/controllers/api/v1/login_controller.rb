@@ -1,5 +1,5 @@
-class LoginController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+class Api::V1::LoginController < ApplicationController
+  skip_before_action :authorized, only: :create
 
   def create
     user = User.find_by(username: user_login_params[:username])
@@ -7,7 +7,7 @@ class LoginController < ApplicationController
       token = encode_token({user_id: user.id})
       render json: {user: UserSerializer.new(user).serialized_json, jwt: token}, status: :accepted
     else
-      render json: {message: 'Invalid username or password'}, status: :unauthorized
+      render json: {errors: 'Invalid username or password.'}, status: :unauthorized
     end
   end
 

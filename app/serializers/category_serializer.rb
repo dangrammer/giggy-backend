@@ -7,4 +7,5 @@ class CategorySerializer
 
   # this association exists but is not useful
   # has_many :users, through: :listings
+  
 end

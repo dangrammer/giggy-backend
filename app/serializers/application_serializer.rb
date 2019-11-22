@@ -5,4 +5,5 @@ class ApplicationSerializer
 
   has_one :applicant, :class_name => 'User'
   has_one :listing
+  
 end

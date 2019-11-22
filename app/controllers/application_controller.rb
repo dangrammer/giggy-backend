@@ -9,8 +9,8 @@ class ApplicationController < ActionController::API
     ENV['JWT_SECRET_KEY']
   end
   
-  def encode_token(payload) #change payload to user_id???
-    JWT.encode(payload, signing_secret)
+  def encode_token(user_id_hash)
+    JWT.encode(user_id_hash, signing_secret)
   end
 
   def decoded_token
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::API
   def current_user
     if decoded_token
       user_id = decoded_token[0]['user_id']
-      @user = User.find_by(id: user_id)
+      user = User.find(user_id)
     else
       nil
     end
@@ -39,7 +39,8 @@ class ApplicationController < ActionController::API
 
 
   def authorized
-    render json: {message: 'Please log in'}, status: :unauthorized unless logged_in?
+    droids = 'These are not the droids you\'re looking for.'
+    render json: {message: droids}, status: :unauthorized unless logged_in?
   end
 
 end

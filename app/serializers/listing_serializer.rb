@@ -21,4 +21,5 @@ class ListingSerializer
   has_many :applications
   # this association exists but is not configured through AR
   # has_many :applicants, through: :applications
+  
 end
