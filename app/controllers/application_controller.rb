@@ -39,7 +39,7 @@ class ApplicationController < ActionController::API
 
 
   def authorized
-    droids = 'These are not the droids you\'re looking for.'
+    droids = 'These aren\'t the droids you\'re looking for.'
     render json: {message: droids}, status: :unauthorized unless logged_in?
   end
 

@@ -1,13 +1,13 @@
 class Api::V1::ListingsController < ApplicationController
   
   def index
-    render json: ListingSerializer.new(Listing.all).serialized_json
+    render json: ListingSerializer.new(Listing.all)
   end
 
   private
 
   def listing_params
-    params.require(:listing).permit(
+    params.permit(
       :subject, 
       :description, 
       :date, 
