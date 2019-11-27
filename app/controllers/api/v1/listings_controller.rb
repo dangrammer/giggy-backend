@@ -4,6 +4,11 @@ class Api::V1::ListingsController < ApplicationController
     render json: ListingSerializer.new(Listing.all)
   end
 
+  def show
+    listing = Listing.find(params[:id])
+    render json: ListingSerializer.new(listing)
+  end
+
   private
 
   def listing_params

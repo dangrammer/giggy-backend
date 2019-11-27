@@ -13,6 +13,7 @@ class ListingSerializer
     :user_id, 
     :category_id,
     :poster, #instance method from Listing class
+    :posting_date, #instance method from Listing class
     :applicants #instance method from Listing class
   ) 
 

@@ -14,4 +14,12 @@ class Listing < ApplicationRecord
     self.user
   end
 
+  def posting_date
+    if self.created_at.year == Time.now.year
+      self.created_at.strftime('%^b %-d')
+    else
+      self.created_at.strftime('%^b %Y')
+    end
+  end
+
 end
