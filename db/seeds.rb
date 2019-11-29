@@ -52,13 +52,13 @@ user3 = User.create(
 )
 
 one_off = Category.create(name: 'One-off Gig')
-remote = Category.create(name: 'Remote Collaboration')
+band = Category.create(name: 'Bandmate')
+record = Category.create(name: 'Recording')
 tour = Category.create(name: 'Tour')
+remote = Category.create(name: 'Remote Collaboration')
 song = Category.create(name: 'Songwriting')
 comp = Category.create(name: 'Composition')
-record = Category.create(name: 'Recording')
 lyric = Category.create(name: 'Lyric Writing')
-band = Category.create(name: 'Bandmate')
 
 listing1 = Listing.create(
   subject: 'Need a drummer for my sweet band.',

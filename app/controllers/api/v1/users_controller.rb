@@ -24,6 +24,12 @@ class Api::V1::UsersController < ApplicationController
     render json: UserSerializer.new(user)
   end
 
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    render json: {success: 'User Deleted'}
+  end
+
   private
 
   def user_params
