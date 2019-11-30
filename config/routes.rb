@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :categories, only: :index
       resources :applications, only: [:index, :create]
       resources :listings, only: [:index, :create, :show]
-      resources :users, only: [:index, :create, :show, :destroy]
+      resources :users, only: [:index, :create, :show, :update, :destroy]
       post '/login', to: 'login#create'
       get '/profile', to: 'users#profile'
     end

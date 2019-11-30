@@ -24,6 +24,16 @@ class Api::V1::UsersController < ApplicationController
     render json: UserSerializer.new(user)
   end
 
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    if user.valid?
+      render json: UserSerializer.new(user)
+    else
+      render json: {errors: 'Failed to update user.'}, status: :not_acceptable
+    end
+  end
+
   def destroy
     user = User.find(params[:id])
     user.destroy
