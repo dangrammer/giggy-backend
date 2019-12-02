@@ -18,6 +18,22 @@ class Api::V1::ListingsController < ApplicationController
     render json: ListingSerializer.new(listing)
   end
 
+  def update
+    listing = Listing.find(params[:id])
+    listing.update(listing_params)
+    if listing.valid?
+      render json: ListingSerializer.new(listing)
+    else
+      render json: {errors: 'Failed to update listing.'}, status: :not_acceptable
+    end
+  end
+
+  def destroy
+    listing = Listing.find(params[:id])
+    listing.destroy
+    render json: {success: 'Listing Deleted'}
+  end
+
   private
 
   def listing_params
