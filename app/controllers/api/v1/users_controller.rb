@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :authorized, only: :create
 
   def index
-    render json: UserSerializer.new(User.all)
+    render json: UserSerializer.new(User.order(:username))
   end
 
   def profile
@@ -16,6 +16,7 @@ class Api::V1::UsersController < ApplicationController
       render json: {user: UserSerializer.new(user), token: token}, status: :created
     else
       render json: {errors: 'Failed to create user.'}, status: :not_acceptable
+      # render json: {errors: user.errors.full_messages}, status: :not_acceptable
     end
   end
 

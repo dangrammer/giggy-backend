@@ -1,7 +1,8 @@
 class Api::V1::ListingsController < ApplicationController
   
   def index
-    render json: ListingSerializer.new(Listing.all)
+    listings = Listing.order(created_at: :desc)
+    render json: ListingSerializer.new(listings)
   end
 
   def create

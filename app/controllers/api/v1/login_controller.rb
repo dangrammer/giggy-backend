@@ -8,6 +8,7 @@ class Api::V1::LoginController < ApplicationController
       render json: {user: UserSerializer.new(user), token: token}, status: :accepted
     else
       render json: {errors: 'Invalid username or password.'}, status: :unauthorized
+      # render json: {errors: user.errors}, status: :unauthorized
     end
   end
 

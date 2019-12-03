@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   has_secure_password
-  
+  # validates :first_name, :last_name, :username, city, state, zip_code, presence: true
+  # validates :username, uniqueness: true, length: {in: 2..15}
+  # validates :first_name, :last_name, length: {in: 2..20}
+  # validates :password, presence: true, length: {in: 5..15}, on: :create
+
   has_many :listings
   has_many :applications, :foreign_key => 'applicant_id'
   # this association exists but is not useful 
