@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
-  # validates :first_name, :last_name, :username, city, state, zip_code, presence: true
-  # validates :username, uniqueness: true, length: {in: 2..15}
-  # validates :first_name, :last_name, length: {in: 2..20}
+  # validates :username, :first_name, :last_name, img_url, city, state, zip_code, presence: true
   # validates :password, presence: true, length: {in: 5..15}, on: :create
+  # validates :username, uniqueness: true, length: {in: 2..15}
+  # validates :first_name, :last_name, :city, :state, zip_code, length: {in: 2..20}
 
   has_many :listings
   has_many :applications, :foreign_key => 'applicant_id'
