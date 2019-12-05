@@ -5,8 +5,8 @@ class User < ApplicationRecord
   # validates :username, uniqueness: true, length: {in: 2..15}
   # validates :first_name, :last_name, :city, :state, zip_code, length: {in: 2..20}
 
-  has_many :listings
-  has_many :applications, :foreign_key => 'applicant_id'
+  has_many :listings, dependent: :destroy
+  has_many :applications, :foreign_key => 'applicant_id', dependent: :destroy
   # this association exists but is not useful 
     # has_many :categories, through: :listings
   # this association exists but is not properly configured through AR

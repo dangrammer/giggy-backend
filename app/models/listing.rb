@@ -1,7 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :applications
+  has_many :applications, dependent: :destroy
   # this association exists but is not configured through AR, the method below takes its place
   # has_many :applicants, through: :applications
 
