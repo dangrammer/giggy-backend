@@ -79,9 +79,10 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
         SEED_PASSWORD_2=KEY_HERE
         SEED_PASSWORD_3=KEY_HERE
         ```
-    _Note: `KEY_HERE` should be characters of your choice and seed passwords are_
-    _optional. If seed passwords are not used, delete them from the `.env` file_
-    _and change passwords for users 1, 2, and 3 in `db/seeds.rb` file._
   7. run `rails db:seed` in terminal to seed database with starter data
   8. run `rails s` in terminal to run server in browser at http://localhost:3000/
   9. install and run [Giggy frontend](https://github.com/dangrammer/giggy-frontend)
+
+  *_Note: `KEY_HERE` should be characters of your choice and seed passwords are_
+  *_optional. If seed passwords are not used, delete them from the `.env` file_
+  *_and change passwords for users 1, 2, and 3 in `db/seeds.rb` file._
