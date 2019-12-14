@@ -83,6 +83,6 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
   8. run `rails s` in terminal to run server in browser at http://localhost:3000/
   9. install and run [Giggy frontend](https://github.com/dangrammer/giggy-frontend)
 
-  *_Note: `KEY_HERE` should be characters of your choice and seed passwords are_
-  *_optional. If seed passwords are not used, delete them from the `.env` file_
-  *_and change passwords for users 1, 2, and 3 in `db/seeds.rb` file._
+  *_Note: `KEY_HERE` should be characters of your choice and seed passwords are
+  optional. If seed passwords are not used, delete them from the `.env` file
+  and change passwords for users 1, 2, and 3 in `db/seeds.rb` file._
