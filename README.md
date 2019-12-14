@@ -42,7 +42,7 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
       width="300" 
       height="200"
     /> -->
-    ![giggy walkthrough](public/images/welcome_page.png)
+    ![giggy walkthrough](public/images/welcome_page.png/300x200)
   </a>  
 
 ## Screenshots
@@ -72,15 +72,15 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
   4. run `rails db:create` in terminal to create database
   5. run `rails db:migrate` in terminal to initialize database
   6. create secret keys:
-    - create a `.env` file in root directory
-    - write secret keys for JWT and seed passwords in `.env` file:
+    i. create a `.env` file in root directory
+    ii. write secret keys for JWT and seed passwords in `.env` file:
       ```
       JWT_SECRET_KEY=KEY_HERE
       SEED_PASSWORD_1=KEY_HERE
       SEED_PASSWORD_2=KEY_HERE
       SEED_PASSWORD_3=KEY_HERE
       ```
-    *_Note: `KEY_HERE` should be characters of your choice and seed passwords are_
+    _Note: `KEY_HERE` should be characters of your choice and seed passwords are_
     _optional. If seed passwords are not used, delete them from the `.env` file_
     _and change passwords for users 1, 2, and 3 in `db/seeds.rb` file._
   7. run `rails db:seed` in terminal to seed database with starter data
