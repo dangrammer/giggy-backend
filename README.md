@@ -1,6 +1,6 @@
 <img 
   src="public/images/banner.png" 
-  alt="giggy walkthrough demo link to youtube" 
+  alt="Giggy banner" 
   width="1350" 
   height="400"
 />
@@ -12,6 +12,9 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
   - add custom validation error messages
   - enhance search and filter options
   - beautify show pages
+
+## Author
+  - Dan Romans | [dangrammer](https://github.com/dangrammer)
 
 ## Frontend Repository
   - [Giggy Client](https://github.com/dangrammer/giggy-frontend)
@@ -38,7 +41,7 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
   <a href="https://www.youtube.com/watch?v=qJu9ODluSp4&feature=youtu.be" target="_blank">
     <img 
       src="public/images/welcome_page.png" 
-      alt="giggy walkthrough demo link to youtube" 
+      alt="Giggy walkthrough demo link to Youtube" 
       width="300" 
       height="200"
     />
@@ -78,11 +81,13 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
         SEED_PASSWORD_1=KEY_HERE
         SEED_PASSWORD_2=KEY_HERE
         SEED_PASSWORD_3=KEY_HERE
+        # see note below
         ```
   7. run `rails db:seed` in terminal to seed database with starter data
   8. run `rails s` in terminal to run server in browser at http://localhost:3000/
   9. install and run [Giggy frontend](https://github.com/dangrammer/giggy-frontend)
 
-  *_Note: `KEY_HERE` should be characters of your choice and seed passwords are
-  optional. If seed passwords are not used, delete them from the `.env` file
-  and change passwords for users 1, 2, and 3 in `db/seeds.rb` file._
+  *_Note:_ `KEY_HERE` _should be characters of your choice and seed passwords are
+  optional. If seed passwords are not used, delete them from the_ `.env` _file
+  and change passwords for users 1, 2, and 3 in_ `db/seeds.rb` _file._ **Always include**
+  `.env` **file in** `.gitignore` **file**.
