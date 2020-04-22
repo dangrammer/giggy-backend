@@ -1,4 +1,7 @@
 class Listing < ApplicationRecord
+  attr_accessor :subject, :description, :date, :end_date, :city, :state, :zip_code, 
+    :paying, :user_id, :category_id,:poster, :posting_date, :applicants 
+    
   belongs_to :user
   belongs_to :category
   has_many :applications, dependent: :destroy

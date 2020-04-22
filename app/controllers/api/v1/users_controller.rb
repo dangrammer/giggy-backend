@@ -15,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
       token = encode_token({user_id: user.id})
       render json: {user: UserSerializer.new(user), token: token}, status: :created
     else
-      render json: {errors: user.errors.full_messages}, status: :not_acceptable #? why not working ?
+      render json: {errors: user.errors.full_messages}, status: :not_acceptable
     end
   end
 
