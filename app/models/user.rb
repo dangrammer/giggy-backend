@@ -1,13 +1,13 @@
 class User < ApplicationRecord
-  attr_accessor :username, :first_name, :last_name, :full_name, :city, :state, 
-    :zip_code, :location, :principal_role, :principal_instrument, :bio, :credits, 
-    :image_url, :website_url, :member_since, :listings_posted, :listings_applied_to 
+  # attr_accessor :username, :first_name, :last_name, :full_name, :city, :state, 
+  #   :zip_code, :location, :principal_role, :principal_instrument, :bio, :credits, 
+  #   :image_url, :website_url, :member_since, :listings_posted, :listings_applied_to 
     
   has_secure_password
-  validates :username, :first_name, :last_name, :image_url, :city, :state, :zip_code, presence: true, on: [:create, :update]
-  validates :password, length: {in: 5..15}, on: :create
-  validates :username, uniqueness: true, length: {in: 2..15}
-  validates :first_name, :last_name, :city, :state, zip_code, length: {in: 2..20}
+  # validates :username, :first_name, :last_name, :image_url, :city, :state, :zip_code, presence: true, on: [:create, :update]
+  # validates :password, length: {in: 5..15}, on: :create
+  # validates :username, uniqueness: true, length: {in: 2..15}
+  # validates :first_name, :last_name, :city, :state, zip_code, length: {in: 2..20}
 
   has_many :listings, dependent: :destroy
   has_many :applications, :foreign_key => 'applicant_id', dependent: :destroy
