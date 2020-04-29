@@ -10,7 +10,8 @@ class Api::V1::ListingsController < ApplicationController
     if listing.valid?
       render json: ListingSerializer.new(listing), status: :created
     else
-      render json: {errors: 'Failed to create listing.'}, status: :not_acceptable
+      errors = listing.errors.full_messages.filter {|m| m != 'Category must exist'}
+      render json: {errors: errors}, status: :not_acceptable
     end
   end
 

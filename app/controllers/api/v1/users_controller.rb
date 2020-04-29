@@ -30,7 +30,6 @@ class Api::V1::UsersController < ApplicationController
     if user.valid?
       render json: UserSerializer.new(user)
     else
-      # render json: {errors: 'Failed to update user.'}, status: :not_acceptable
       render json: {errors: user.errors.full_messages}, status: :not_acceptable
     end
   end

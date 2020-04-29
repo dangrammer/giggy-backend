@@ -1,4 +1,9 @@
 class Listing < ApplicationRecord
+  validates :subject, :description, presence: true
+  validates :category_id, presence: {message: 'must be selected'}
+  validates :subject, length: {maximum: 100}
+  validates :description, length: {maximum: 2000}
+  
   belongs_to :user
   belongs_to :category
   has_many :applications, dependent: :destroy
