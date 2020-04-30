@@ -26,7 +26,7 @@ class Api::V1::ListingsController < ApplicationController
     if listing.valid?
       render json: ListingSerializer.new(listing)
     else
-      render json: {errors: 'Failed to update listing.'}, status: :not_acceptable
+      render json: {errors: listing.errors.full_messages}, status: :not_acceptable
     end
   end
 
