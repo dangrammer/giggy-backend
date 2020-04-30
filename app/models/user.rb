@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :username, :first_name, :last_name, :image_url, :city, :state, :zip_code, presence: true
   validates :password, length: {in: 5..15}, on: :create
-  validates :username, uniqueness: true, length: {in: 2..15}
+  validates :username, length: {in: 2..15}, uniqueness: {message: ': An account associated with %{value} already exists'}
   validates :first_name, :last_name, :city, :state, :zip_code, length: {in: 2..20}
   validates :bio, :credits, length: {maximum: 2000}
 
