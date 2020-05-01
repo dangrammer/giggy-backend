@@ -9,7 +9,6 @@ Giggy is an app for musicians to post, browse, search, and apply to listings for
 It is a project application done for module 5 of Flatiron School. Besides smoothing up existing 
 features, refactoring certain code blocks, and seeking out bugs, the main to-dos are:
   - implement user-to-user messaging
-  - add custom validation error messages
   - enhance search and filter options
   - beautify show pages
 
