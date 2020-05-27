@@ -22,17 +22,17 @@ features, refactoring certain code blocks, and seeking out bugs, the main to-dos
   - ruby 2.6.1
 
 ## Rails Version
-  - rails ~> 6.0.1
+  - rails 6.0.3.1
 
 ## Database
-  - postgreSQL
+  - postgreSQL 1.2.3
 
 ## Gem Dependencies
-  - fast_jsonapi
-  - rack-cors
-  - bcrypt ~> 3.1.7
-  - jwt ~> 2.2, >= 2.2.1
-  - dotenv-rails
+  - fast_jsonapi 1.5
+  - rack-cors 1.1.1
+  - bcrypt 3.1.13
+  - jwt 2.2
+  - dotenv-rails 2.7.5
 
 ## Live Demo
   Link to walkthrough video with narration:
