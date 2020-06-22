@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2019_11_21_152921) do
+ActiveRecord::Schema.define(version: 2020_06_22_212145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -16,6 +16,11 @@ ActiveRecord::Schema.define(version: 2019_11_21_152921) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "subject"
     t.text "description"
@@ -29,6 +34,25 @@ ActiveRecord::Schema.define(version: 2019_11_21_152921) do
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "text"
+    t.bigint "conversation_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "user_conversations", force: :cascade do |t|
+    t.bigint "conversation_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conversation_id"], name: "index_user_conversations_on_conversation_id"
+    t.index ["user_id"], name: "index_user_conversations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +73,8 @@ ActiveRecord::Schema.define(version: 2019_11_21_152921) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
+  add_foreign_key "user_conversations", "conversations"
+  add_foreign_key "user_conversations", "users"
 end
