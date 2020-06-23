@@ -1,4 +1,5 @@
 class ConversationSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :id
+  has_many :messages
 end
