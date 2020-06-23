@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :applications, only: [:index, :create]
       resources :listings, only: [:index, :create, :show, :update, :destroy]
       resources :users, only: [:index, :create, :show, :update, :destroy]
+      resources :user_conversations, only: :create #this may require other routes
+      resources :conversations, only: [:index, :create]
+      resources :messages, only: :create
+      mount ActionCable.server => '/cable'
       post '/login', to: 'login#create'
       get '/profile', to: 'users#profile'
     end
