@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :bio, :credits, length: {maximum: 2000}
 
   has_many :messages
+  has_many :user_conversations
   has_many :conversations, through: :user_conversations
   has_many :listings, dependent: :destroy
   has_many :applications, :foreign_key => 'applicant_id', dependent: :destroy

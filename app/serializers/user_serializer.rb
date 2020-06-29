@@ -22,6 +22,7 @@ class UserSerializer
   )
 
   has_many :messages
+  has_many :user_conversations
   has_many :conversations, through: :user_conversations
   has_many :listings
   has_many :applications, :foreign_key => 'applicant_id'
