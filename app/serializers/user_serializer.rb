@@ -21,6 +21,8 @@ class UserSerializer
     :listings_applied_to #instance method from User class
   )
 
+  has_many :messages
+  has_many :conversations, through: :user_conversations
   has_many :listings
   has_many :applications, :foreign_key => 'applicant_id'
   # this association exists but is not useful 
