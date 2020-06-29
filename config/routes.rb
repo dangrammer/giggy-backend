@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :applications, only: [:index, :create]
       resources :listings, only: [:index, :create, :show, :update, :destroy]
       resources :users, only: [:index, :create, :show, :update, :destroy]
-      resources :user_conversations, only: :create #this may require other routes
+      resources :user_conversations, only: :create #this may require other routes OR not be necessary
       resources :conversations, only: [:index, :create]
       resources :messages, only: :create
       mount ActionCable.server => '/cable'
