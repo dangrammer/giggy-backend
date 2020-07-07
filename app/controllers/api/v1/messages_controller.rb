@@ -4,11 +4,6 @@ class Api::V1::MessagesController < ApplicationController
     conversation = Conversation.find(message_params[:conversation_id])
 
     if message.valid?
-      # serialized_data = ActiveModelSerializers::Adapter::Json.new(
-      #   MessageSerializer.new(message)
-      # ).serializable_hash
-
-      # testing this code for FastJSON API needs
       serialized_data = MessageSerializer.new(message)
 
       MessagesChannel.broadcast_to conversation, serialized_data
