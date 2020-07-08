@@ -17,7 +17,7 @@ class Api::V1::ConversationsController < ApplicationController
         )
       serialized_data = ConversationSerializer.new(conversation)
       
-      ActionCable.server.broadcast "current_user_#{current_user.id}", serialized_data
+      ActionCable.server.broadcast "current_user_#{conversation_params[:sender_id]}", serialized_data
       ActionCable.server.broadcast "current_user_#{conversation_params[:receiver_id]}", serialized_data
       head :ok
     end
@@ -26,7 +26,7 @@ class Api::V1::ConversationsController < ApplicationController
   private
   
   def conversation_params
-    params.permit(:sender_id, :receiver_id) #.require(:conversation)
+    params.require(:conversation).permit(:sender_id, :receiver_id)
   end
 
 end
